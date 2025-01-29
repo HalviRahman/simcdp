@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pendaftaran - SIM-CDP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <!-- DataTables Buttons CSS -->
+    <link href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .footer a {
+            color: #6c757d;
+        }
+        .footer a:hover {
+            color: #0d6efd;
+        }
+        .table th {
+            white-space: nowrap;
+        }
+        .dt-buttons {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <span class="navbar-brand">SIM-CDP</span>
+            <a href="index.html" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left me-2"></i>Kembali
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Daftar Proposal CDP</h5>
+
+                <!-- Table with DataTables -->
+                <table id="proposalTable" class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal Upload</th>
+                            <th>Judul Proposal</th>
+                            <th>Ketua</th>
+                            <th>Program Studi</th>
+                            <th class="text-center">File Proposal</th>
+                            <th class="text-center">Status Prodi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>12 Feb 2025</td>
+                            <td>Pengembangan Media Pembelajaran Berbasis AR</td>
+                            <td>Dr. John Doe</td>
+                            <td>S1 Teknik Informatika</td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-download me-2"></i>Unduh
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-warning">Menunggu</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>10 Feb 2025</td>
+                            <td>Implementasi IoT untuk Smart Campus</td>
+                            <td>Dr. Jane Smith</td>
+                            <td>S1 Teknik Informatika</td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-download me-2"></i>Unduh
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-success">Disetujui</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>8 Feb 2025</td>
+                            <td>Pengembangan Aplikasi Mobile Learning</td>
+                            <td>Dr. Bob Wilson</td>
+                            <td>S1 Teknik Informatika</td>
+                            <td class="text-center">
+                                <a href="#" class="btn btn-sm btn-primary">
+                                    <i class="bi bi-download me-2"></i>Unduh
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <span class="badge bg-danger">Ditolak</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <small class="text-muted">developed by <a href="mailto:saintekonline@gmail.com" class="text-decoration-none">Unit SIM Fakultas SAINTEK @ 2025</a></small>
+        </div>
+    </footer>
+
+    <!-- Required JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <!-- DataTables Buttons JS -->
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.bootstrap5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+
+    <!-- Initialize DataTable -->
+    <script>
+        $(document).ready(function() {
+            $('#proposalTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        text: '<i class="bi bi-file-earmark-excel me-2"></i>Excel',
+                        className: 'btn btn-success',
+                        exportOptions: {
+                            columns: [0,1,2,3,4,6] // Exclude File Proposal column
+                        }
+                    }
+                ],
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/id.json'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
