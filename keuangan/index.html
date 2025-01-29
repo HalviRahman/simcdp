@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Keuangan - SIM-CDP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .table th {
+            white-space: nowrap;
+        }
+        .status-badge {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <span class="navbar-brand">SIM-CDP</span>
+            <a href="../index.html" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left me-2"></i>Kembali
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-4">Daftar Pengajuan CDP</h5>
+
+                <!-- Table with horizontal scroll for mobile -->
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>No</th>
+                                <th>Nama Ketua</th>
+                                <th>Program Studi</th>
+                                <th>Judul Proposal</th>
+                                <th class="text-center">Proposal CDP</th>
+                                <th class="text-center">Laporan Kegiatan</th>
+                                <th class="text-center">Laporan Keuangan</th>
+                                <th class="text-center">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Dr. John Doe</td>
+                                <td>S1 Teknik Informatika</td>
+                                <td>Pengembangan Media Pembelajaran Berbasis AR</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-warning">Menunggu</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-warning">Proses</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Dr. Jane Smith</td>
+                                <td>S1 Matematika</td>
+                                <td>Implementasi Machine Learning untuk Analisis Data</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-success">Selesai</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Dr. Bob Wilson</td>
+                                <td>S1 Biologi</td>
+                                <td>Konservasi Keanekaragaman Hayati</td>
+                                <td class="text-center">
+                                    <a href="#" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-download me-2"></i>Unduh
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-warning">Menunggu</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-warning">Menunggu</span>
+                                </td>
+                                <td class="text-center">
+                                    <span class="badge bg-warning">Proses</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">developed by Unit SIM Fakultas SAINTEK @ 2025</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

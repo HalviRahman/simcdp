@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Program Studi - SIM-CDP</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a href="index.html" class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left me-2"></i>Kembali
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container my-4">
+        <!-- Form Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Tambah Program Studi</h5>
+                <form class="row g-3 align-items-end">
+                    <div class="col-md-4">
+                        <label for="jenjang" class="form-label">Jenjang</label>
+                        <select class="form-select" id="jenjang" required>
+                            <option value="" selected disabled>Pilih Jenjang</option>
+                            <option value="S1">S1</option>
+                            <option value="S2">S2</option>
+                            <option value="Kolaborasi">Kolaborasi</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="nama_prodi" class="form-label">Nama Program Studi</label>
+                        <input type="text" class="form-control" id="nama_prodi" required>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="bi bi-plus-circle me-2"></i>Tambah
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-3">Daftar Program Studi</h5>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="table-primary">
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Program Studi</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>S1 Matematika</td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning me-1" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>S1 Biologi</td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning me-1" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Program Studi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="edit_jenjang" class="form-label">Jenjang</label>
+                            <select class="form-select" id="edit_jenjang" required>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2</option>
+                                <option value="Kolaborasi">Kolaborasi</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit_nama_prodi" class="form-label">Nama Program Studi</label>
+                            <input type="text" class="form-control" id="edit_nama_prodi" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-primary">Simpan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus Program Studi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Apakah Anda yakin ingin menghapus program studi ini?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="button" class="btn btn-danger">Hapus</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">developed by Unit SIM Fakultas SAINTEK @ 2025</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
