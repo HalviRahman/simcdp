@@ -63,7 +63,7 @@
                     <div class="mb-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h6 class="mb-0"><i class="bi bi-people-fill me-2"></i>Anggota Kelompok</h6>
-                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#anggotaModal">
+                            <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#tambahAnggotaModal">
                                 <i class="bi bi-person-plus me-2"></i>Tambah Anggota
                             </button>
                         </div>
@@ -117,8 +117,8 @@
         </div>
     </div>
 
-    <!-- Anggota Modal -->
-    <div class="modal fade" id="anggotaModal" tabindex="-1">
+    <!-- Modal Tambah Anggota -->
+    <div class="modal fade" id="tambahAnggotaModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -128,18 +128,15 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Nama Dosen</label>
-                            <select class="form-select" required>
-                                <option value="" selected disabled>Pilih Dosen</option>
-                                <option>Dr. Jane Smith</option>
-                                <option>Dr. Bob Wilson</option>
-                            </select>
+                            <label class="form-label">Nama Anggota</label>
+                            <input type="text" class="form-control" placeholder="Masukkan nama lengkap" required>
+                            <div class="form-text">Masukkan nama / NIP / NIM Anggota</div>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                    <button type="button" class="btn btn-success">Tambah</button>
+                    <button type="button" class="btn btn-primary">Tambah</button>
                 </div>
             </div>
         </div>
